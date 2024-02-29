@@ -1,0 +1,71 @@
+/**
+ * show article links next to nav menu
+ */
+(function($) {
+
+$(function(){
+    function current_path(){
+	var root;
+	var scripts = document.getElementsByTagName("script");
+	var i = scripts.length;
+	while (i--) {
+            //var match = scripts[i].src.match(/(^|.*\/)keyword\.js$/|>);
+            var match = scripts[i].src.match(/(^|.*\/)keyword\.js/);
+            if (match) {
+		root = match[1];
+		break;
+            }
+	}
+	return root;
+    }
+
+
+    $('article.keywords div.item').click(function(event) {
+	var kw_selector = "#keyword-window"
+	var load_window = '<div id="keyword-window"><img class="loading" src="' + current_path() + '../img/ajax-loader.gif" /></div>'
+
+	var $this = $(this);
+	// 既存のwindowを消しておく?
+	$this.parents("section").find(kw_selector).remove();
+
+	// XXX; overlay表示 クリックしたらkeyword-windowが消える
+	/*
+	$("#keyword-overlay").toggleClass("active");
+	$("#keyword-overlay.active").live("click", function(){
+	    $("#keyword-overlay").toggleClass("active");
+	    $this.parents("section").find(kw_selector).remove();	    
+	});
+	*/
+
+	$(kw_selector + " img.close").live("click", function(){
+	    $this.parents("section").find(kw_selector).remove();	    
+	});
+
+	// window & ロード中表示
+	$this.before(load_window);
+
+	// 中身表示
+        //aリンクの動作を停止
+        event.preventDefault();
+
+        //リンク先URLを取得
+	var window = $this.prev(kw_selector);
+        var page = $this.find("h3 a").attr("href");
+        window = window.load(page + ' article.keyword', null, function() {
+
+	    // XXX; 見えない領域にロードしてから間を空けて大きくするか。。。
+	    var section_left = window.parents("section").offset().left;
+	    var window_left = window.offset().left;
+	    window.css("margin-left", ((section_left - window_left + 26) + "px"));
+	    window.width("612px");
+
+	    window.find("img.loading").remove();
+	    window.prepend('<a href="#"><img src="' + current_path() + '../img/close.png" class="close"/></a>');
+	    window.css("background-color", "#ffffff");
+	    window.find("article.keyword").show("200");
+	});
+
+    }); 
+});
+
+})(jQuery);

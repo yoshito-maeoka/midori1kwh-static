@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: 62メートル特急に乗る</title>
+	<atom:link href="https://midori1kwh.de/2011/07/25/23/feed" rel="self" type="application/rss+xml" />
+	<link>https://midori1kwh.de/2011/07/25/23?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=62%25e3%2583%25a1%25e3%2583%25bc%25e3%2583%2588%25e3%2583%25ab%25e7%2589%25b9%25e6%2580%25a5%25e3%2581%25ab%25e4%25b9%2597%25e3%2582%258b</link>
+	<description>ドイツから風に乗って</description>
+	<lastBuildDate>Tue, 11 Oct 2022 15:57:11 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.25</generator>
+	<item>
+		<title>By: やま</title>
+		<link>https://midori1kwh.de/2011/07/25/23#comment-6</link>
+		<dc:creator><![CDATA[やま]]></dc:creator>
+		<pubDate>Sat, 27 Aug 2011 07:57:47 +0000</pubDate>
+		<guid isPermaLink="false">https://midori1kwh.de/?p=23#comment-6</guid>
+		<description><![CDATA[これはあるスイスの砂糖袋に印刷されていた物です。
+オリジナルはこうです。1kWh=62 Meter Intercity fahren.
+更に調べてみたら
+Energiehandbuch: Gewinnung, Wandlung und Nutzung von Energie
+Von Eckhard Rebhan   という本がみつかりました。
+この本には 20、2 から 24、1 kWh /  列車 km とありました。
+それは 1kWh当たりに計算すると 約42
+から50メートルぐらいです。
+1993年にいろんな路線で計ったデーターを集めて計算した電力量だそうです。
+車両の長さは10 と13両でした。
+平常運転と書いてあったので客は乗っていたと思います。
+スイスの砂糖の例は多分、普通の特急でこの本に取り上げられたICE-1よりも省エネのようです。
+やま]]></description>
+		<content:encoded><![CDATA[<p>これはあるスイスの砂糖袋に印刷されていた物です。<br />
+オリジナルはこうです。1kWh=62 Meter Intercity fahren.<br />
+更に調べてみたら<br />
+Energiehandbuch: Gewinnung, Wandlung und Nutzung von Energie<br />
+Von Eckhard Rebhan   という本がみつかりました。<br />
+この本には 20、2 から 24、1 kWh /  列車 km とありました。<br />
+それは 1kWh当たりに計算すると 約42<br />
+から50メートルぐらいです。<br />
+1993年にいろんな路線で計ったデーターを集めて計算した電力量だそうです。<br />
+車両の長さは10 と13両でした。<br />
+平常運転と書いてあったので客は乗っていたと思います。<br />
+スイスの砂糖の例は多分、普通の特急でこの本に取り上げられたICE-1よりも省エネのようです。<br />
+やま</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: 伊予田聡子</title>
+		<link>https://midori1kwh.de/2011/07/25/23#comment-3</link>
+		<dc:creator><![CDATA[伊予田聡子]]></dc:creator>
+		<pubDate>Wed, 24 Aug 2011 06:55:42 +0000</pubDate>
+		<guid isPermaLink="false">https://midori1kwh.de/?p=23#comment-3</guid>
+		<description><![CDATA[新ブログ開設おめでとうございます。
+ドイツ語の情報が翻訳要約されていて、うれしいです。
+
+ところで６２キロメートル特急に乗るときの電力量ですが、これは、何人乗っても１KWなのですか。
+それとも平均的乗客数で割って換算した、一人につきの消費量ですか？
+それとも一人乗ったら、１KW増えるのですか？]]></description>
+		<content:encoded><![CDATA[<p>新ブログ開設おめでとうございます。<br />
+ドイツ語の情報が翻訳要約されていて、うれしいです。</p>
+<p>ところで６２キロメートル特急に乗るときの電力量ですが、これは、何人乗っても１KWなのですか。<br />
+それとも平均的乗客数で割って換算した、一人につきの消費量ですか？<br />
+それとも一人乗ったら、１KW増えるのですか？</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

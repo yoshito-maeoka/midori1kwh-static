@@ -1,0 +1,207 @@
+/*
+show article links next to nav menu
+*/
+
+
+(function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+  (function($) {
+    return $(document).ready(function() {
+      var MenuManager, MenuWindow, script_path;
+      script_path = function() {
+        var i, match, path, scripts;
+        path = "";
+        scripts = document.getElementsByTagName("script");
+        i = scripts.length;
+        while (i--) {
+          match = scripts[i].src.match(/(^|.*\/)menu3\.js/);
+          if (match) {
+            path = match[1];
+            break;
+          }
+        }
+        return path;
+      };
+      /*
+      change color and value, if focus is on the search box
+      */
+
+      $(function() {
+        return $("#s").focus(function() {
+          if ($(this).val() === $(this).attr("defaultValue")) {
+            $(this).val("");
+            return $(this).css("color", "#000000");
+          }
+        }).blur(function() {
+          if (jQuery.trim($(this).val()) === "") {
+            $(this).val($(this).attr("defaultValue"));
+            return $(this).css("color", "#AAAAAA");
+          }
+        });
+      });
+      MenuWindow = (function() {
+        function MenuWindow(element, manager) {
+          var _this = this;
+          this.fixed = false;
+          this.jq = $("#" + $(element).attr("id"));
+          this.manager = manager;
+          this.hover = false;
+          this.jq.on("click", ".close", function() {
+            _this.unfix();
+            _this.toggleHighlight();
+            _this.hover = false;
+            return _this._close();
+          });
+        }
+
+        MenuWindow.prototype.toggleHighlight = function() {
+          return this.jq.toggleClass("selected");
+        };
+
+        MenuWindow.prototype.open = function() {
+          var _this = this;
+          this.jq.addClass("slided");
+          this.jq.children("div").css("z-index", "3000").stop(true, true).fadeIn(200, function() {
+            _this.manager.hide_others();
+            return _this.jq.removeClass("slided");
+          });
+          return this.jq.children("div").bind('mouseenter', function(e) {
+            return _this.hover = true;
+          }).bind('mouseleave', function(e) {
+            _this.hover = false;
+            return _this._close();
+          });
+        };
+
+        MenuWindow.prototype.close = function() {
+          var _this = this;
+          return setTimeout(function() {
+            return _this._close();
+          }, 200);
+        };
+
+        MenuWindow.prototype._close = function() {
+          if (this.hover) {
+            return;
+          }
+          if (this.is_fixed()) {
+            return;
+          }
+          return this.jq.children("div").css("z-index", "0").stop(true, true).fadeOut(200);
+        };
+
+        MenuWindow.prototype.fix = function() {
+          this.jq.find(".close").toggleClass("hide");
+          return this.fixed = true;
+        };
+
+        MenuWindow.prototype.unfix = function() {
+          this.jq.find(".close").toggleClass("hide");
+          return this.fixed = false;
+        };
+
+        MenuWindow.prototype.is_fixed = function() {
+          return this.fixed;
+        };
+
+        MenuWindow.prototype.toggle_fix = function() {
+          if (this.fixed) {
+            return this.unfix();
+          } else {
+            return this.fix();
+          }
+        };
+
+        return MenuWindow;
+
+      })();
+      MenuManager = (function() {
+        MenuManager.prototype.get_id = function(selector) {
+          return $(selector).attr("id");
+        };
+
+        function MenuManager() {
+          this.is_fixed = __bind(this.is_fixed, this);
+          var $oe_menu,
+            _this = this;
+          this.windows = {};
+          $oe_menu = $('.oe_menu');
+          $oe_menu.children("li").each(function(index, element) {
+            return _this.windows[_this.get_id(element)] = new MenuWindow(element, _this);
+          });
+          this.$menu_items = $oe_menu.find('>li>a');
+          this.$menu_items.bind('mouseenter', function(e) {
+            var w;
+            if (_this.is_fixed()) {
+              return;
+            }
+            w = _this.get_window($(e.target).parent());
+            w.toggleHighlight();
+            return w.open();
+          }).bind('mouseleave', function(e) {
+            var w;
+            if (_this.is_fixed()) {
+              return;
+            }
+            w = _this.get_window($(e.target).parent());
+            w.toggleHighlight();
+            return w.close();
+          }).bind('click', function(e) {
+            var fw, w;
+            w = _this.get_window($(e.target).parent());
+            fw = _this.get_fixed_window();
+            if (fw === null || w === fw) {
+              return w.toggle_fix();
+            }
+          });
+        }
+
+        MenuManager.prototype.get_window = function(selector) {
+          var key, w;
+          key = this.get_id(selector);
+          w = this.windows[key];
+          if (w === void 0) {
+            w = new MenuWindow(selector.target, this);
+            this.windows[key] = w;
+          }
+          return w;
+        };
+
+        MenuManager.prototype.get_fixed_window = function() {
+          var result, selector, w, _ref;
+          result = null;
+          _ref = this.windows;
+          for (selector in _ref) {
+            w = _ref[selector];
+            if (w.is_fixed()) {
+              result = w;
+            }
+          }
+          return result;
+        };
+
+        MenuManager.prototype.is_fixed = function() {
+          var selector, w, _ref;
+          _ref = this.windows;
+          for (selector in _ref) {
+            w = _ref[selector];
+            if (w.is_fixed()) {
+              return true;
+            }
+          }
+          return false;
+        };
+
+        MenuManager.prototype.hide_others = function() {
+          return this.$menu_items.parent().not(".slided").siblings("div").hide();
+        };
+
+        return MenuManager;
+
+      })();
+      return new MenuManager;
+    });
+  })(jQuery);
+
+}).call(this);

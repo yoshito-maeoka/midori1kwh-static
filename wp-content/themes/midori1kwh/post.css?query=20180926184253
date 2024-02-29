@@ -1,0 +1,234 @@
+@charset "UTF-8"; 
+article {
+	float: left;
+	width: 630px;
+	padding-left: 28px;
+	padding-right: 5px;
+	margin-bottom: 4.0em;
+}
+
+article > p {
+	width: 610px;
+	text-align: justify;
+	font-family:'ヒラギノ角ゴ Pro W3' , "ＭＳ Ｐゴシック" , helvetica,verdana, san-serif;
+	font-size: 105%;
+	margin-bottom: 2.0em;
+}
+article h2 {
+	font-size: 140%; 
+	margin-bottom: 0.5em;
+}
+article h2, article h3, article h4, article h5, article h6 {
+	width: 610px;
+}
+article h3 {
+	font-size: 1.17em; 
+	margin-bottom: 0.5em;
+}
+article sup {
+	vertical-align: text-top;
+	line-height: 0.5em;
+}
+article .left, article .right, article .center {
+	float: left;
+	margin-right: 25px;
+}
+article .left span, article .right span, article .center span {
+	font-family:'ヒラギノ角ゴ Pro W3' , "ＭＳ Ｐゴシック" , helvetica,verdana, san-serif;
+	font-weight: bold;
+}
+
+article blockquote {
+    background: url(image/blockquote4-c.gif) no-repeat bottom;  
+	margin-top: 1.0em;
+	margin-bottom: 1.0em;
+	margin-left: 20px;
+	padding-left: 15px;
+	border-left: 3px solid #dddddd;
+    color: #212121;  
+}  
+
+article .footnotes {
+	border-top: 1px dotted #cccccc;
+	padding-top: 19px;
+	margin-bottom: 38px;
+	width: 400px;
+}
+
+article .footnotes * {
+	font-size: 100%;
+}
+
+article .property {
+	text-align: right;
+	padding-right: 20px;
+	font-size: 105%;
+	font-weight: bold;
+	margin-bottom: 2.5em;
+}
+
+.related-posts ul * {
+    font-family:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',Meiryo,"ＭＳ Ｐゴシック" , helvetica,verdana, san-serif;  
+	font-weight: bold;
+}
+.related-posts ul li {
+	list-style-image: url("img/arrow-gray.png");
+	margin-left: 1em;
+	padding-left: 20px;
+	line-height: 1.5em;
+	margin-top: 3px;
+}
+.related-posts ul li abbr {
+/*    display:none;*/
+    color: #CCCCCC;
+    font-weight: normal;
+}
+.related-posts ul li a{
+	line-height: 1.5em;
+	display:block;
+	-moz-transition: 0.2s ease-in-out;
+	-webkit-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	-ms-transition: 0.2s ease-in-out;	
+}
+.related-posts ul li a:hover{
+	background-color:#000000;
+	color:#FFFFFF;
+}
+.related-posts ul li span {
+    white-space: nowrap;
+}
+
+.related-posts ul li span.date{
+    font-family:Times New Roman, "ヒラギノ明朝 Pro W3", "HiraMinProN-W3", 'ＭＳ Ｐ明朝', serif; 
+    color:#AAA;
+    font-weight: normal;
+}
+
+.comment {
+	width: 600px; 
+}
+
+.comment h3 {
+	border-bottom: 1px dotted #cccccc;
+	width: 100%;
+	margin-bottom: 2.0em;
+}
+.comment label, {	
+	font-size: 80%;
+	font-family:'ヒラギノ角ゴ Pro W3' , "ＭＳ Ｐゴシック" , helvetica,verdana, san-serif;
+	color: #AAAAAA;
+}
+.comment button {	
+	padding: 1px 6px;
+	font-size: 90%;
+	font-family:'ヒラギノ角ゴ Pro W3' , "ＭＳ Ｐゴシック" , helvetica,verdana, san-serif;
+}
+.comment input {
+	border: 1px solid #cccccc;
+	width: 100%;
+	margin-bottom: 2.0em;
+	background-color: #fafafa;
+	height: 2.0em;
+}
+.comment textarea {
+	border: 1px solid #cccccc;
+	width: 100%;
+	height: 8.0em;
+	margin-bottom: 2.0em;
+	background-color: #fafafa;
+}
+
+@media print {
+	body {
+		background: none !important;
+	}
+	#wrapper {
+		clear: both !important;
+		display: block !important;
+		float: none !important;
+		position: relative !important;
+	}
+	#header {
+		border-bottom: 2pt solid #000;
+		padding-bottom: 18pt;
+	}
+	#colophon {
+		border-top: 2pt solid #000;
+	}
+	#site-title,
+	#site-description {
+		float: none;
+		line-height: 1.4em;
+		margin: 0;
+		padding: 0;
+	}
+	#site-title {
+		font-size: 13pt;
+	}
+	.entry-content {
+		font-size: 14pt;
+		line-height: 1.6em;
+	}
+	.entry-title {
+		font-size: 21pt;
+	}
+	#access,
+	#branding img,
+	#respond,
+	.comment-edit-link,
+	.edit-link,
+	.navigation,
+	.page-link,
+	.widget-area {
+		display: none !important;
+	}
+	#container,
+	#header,
+	#footer {
+		margin: 0;
+		width: 100%;
+	}
+	#content,
+	.one-column #content {
+		margin: 24pt 0 0;
+		width: 100%;
+	}
+	article {
+		float: left;
+		width: 630px !important;
+		padding-left: 28px;
+		padding-right: 5px;
+		margin-bottom: 4.0em;
+	}
+	article > p {
+		width: 610px !important;
+	}
+	.wp-caption p {
+		font-size: 11pt;
+	}
+	#site-info,
+	#site-generator {
+		float: none;
+		width: auto;
+	}
+	#colophon {
+		width: auto;
+	}
+	img#wpstats {
+		display: none;
+	}
+	#site-generator a {
+		margin: 0;
+		padding: 0;
+	}
+	#entry-author-info {
+		border: 1px solid #e7e7e7;
+	}
+	#main {
+		display: inline;
+	}
+	.home .sticky {
+		border: none;
+	}
+}
